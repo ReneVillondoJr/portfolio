@@ -1,4 +1,4 @@
-export interface Project {
+export type Project = {
   title: string;
   category: string;
   description: string;
@@ -6,7 +6,8 @@ export interface Project {
   technologies: string[];
   private: boolean;
   privateNotice?: string;
-}
+  link?: string;
+};
 
 export const projects: Project[] = [
   {
@@ -22,12 +23,13 @@ export const projects: Project[] = [
   },
 
   {
-    title: 'Portfolio Website',
-    category: 'Personal Project',
+    title: 'Paws Grooming',
+    category: 'Web Application',
     description:
-      'A responsive developer portfolio focused on clean UI, modern interactions, and a professional presentation of projects and experience.',
+      'A modern dog grooming website with appointment booking, grooming services, gallery, and responsive user interface.',
     image: '/project2.png',
     technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     private: false,
+    link: 'https://pawsgrooming.vercel.app/',
   },
 ];
