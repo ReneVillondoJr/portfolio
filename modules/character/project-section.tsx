@@ -151,17 +151,46 @@ export function ProjectsSection() {
                   )}
 
                   {/* View Project */}
-                  {isExternalProject && (
-                    <div className='mt-6 border-t border-white/6 pt-5'>
-                      <Link
-                        href={project.link!}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400'
-                      >
-                        View live project
-                        <ArrowUpRight className='size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5' />
-                      </Link>
+                  {(project.link || project.guestLink || project.adminLink) && (
+                    <div className='mt-6 flex flex-wrap gap-4 border-t border-white/6 pt-5'>
+                      {/* General project */}
+                      {project.link && (
+                        <Link
+                          href={project.link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400'
+                        >
+                          View Live Project
+                          <ArrowUpRight className='size-4' />
+                        </Link>
+                      )}
+
+                      {/* Guest */}
+                      {project.guestLink && (
+                        <Link
+                          href={project.guestLink}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400'
+                        >
+                          View Guest Site
+                          <ArrowUpRight className='size-4' />
+                        </Link>
+                      )}
+
+                      {/* Admin */}
+                      {project.adminLink && (
+                        <Link
+                          href={project.adminLink}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-flex items-center gap-2 text-sm font-medium text-zinc-400 transition-colors hover:text-cyan-400'
+                        >
+                          View Admin Site
+                          <ArrowUpRight className='size-4' />
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>

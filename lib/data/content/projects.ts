@@ -7,6 +7,8 @@ export type Project = {
   private: boolean;
   privateNotice?: string;
   link?: string;
+  guestLink?: string;
+  adminLink?: string;
 };
 
 export const projects: Project[] = [
@@ -59,6 +61,7 @@ export const projects: Project[] = [
       'Auth.js',
     ],
     private: false,
-    link: 'https://hotel-booking-lake-three.vercel.app/',
+    guestLink: 'https://hotel-booking-lake-three.vercel.app/guest',
+    adminLink: 'https://hotel-booking-lake-three.vercel.app/admin',
   },
 ];

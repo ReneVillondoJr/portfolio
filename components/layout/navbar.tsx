@@ -49,7 +49,7 @@ export function Navbar() {
             ))}
 
             <a
-              href='/VillondoCV.pdf'
+              href='/resume.pdf'
               download
               className='rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-white transition hover:border-cyan-400/40 hover:bg-cyan-400/10'
             >
@@ -84,7 +84,7 @@ export function Navbar() {
               ))}
 
               <a
-                href='/VillondoCV.pdf'
+                href='/resume.pdf'
                 download
                 className='mt-2 border border-white/10 px-3 py-3 text-sm font-medium text-white'
               >

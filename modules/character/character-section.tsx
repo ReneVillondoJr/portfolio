@@ -61,7 +61,7 @@ export function CharacterSection() {
             </a>
 
             <a
-              href='/VillondoCV.pdf'
+              href='/resume.pdf'
               download
               className='inline-flex h-12 items-center justify-center rounded-full border border-white/10 px-7 text-sm font-medium text-zinc-300 transition-all duration-200 hover:border-white/20 hover:bg-white/4 hover:text-white'
             >
@@ -72,7 +72,7 @@ export function CharacterSection() {
           {/* Social */}
           <div className='mt-12 flex flex-wrap items-center gap-6'>
             <a
-              href={portfolioData.social.github}
+              href='https://github.com/ReneVillondoJr'
               target='_blank'
               rel='noreferrer'
               className='group flex items-center gap-2 text-sm text-zinc-600 transition-colors hover:text-white'

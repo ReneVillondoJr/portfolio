@@ -21,7 +21,7 @@ export const portfolioData = {
   },
 
   social: {
-    github: '#',
+    github: 'https://github.com/ReneVillondoJr',
     linkedin: '#',
   },
 
