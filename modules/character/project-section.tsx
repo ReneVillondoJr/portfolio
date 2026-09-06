@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { ArrowUpRight, ExternalLink, LockKeyhole } from 'lucide-react';
 
 import { Container } from '@/components/ui/container';
@@ -163,9 +164,62 @@ export function ProjectsSection() {
                     </div>
                   )}
 
+                  {/* Demo Login */}
+                  {project.demoLogin && (
+                    <div className='mt-6 border-t border-border pt-5'>
+                      <div className='rounded-xl border border-border bg-foreground/[0.02] p-4'>
+                        {/* Header */}
+                        <div className='flex items-center gap-2'>
+                          <span className='text-sm'>🔐</span>
+
+                          <h4 className='text-sm font-semibold text-foreground'>
+                            Demo Login
+                          </h4>
+                        </div>
+
+                        {/* Description */}
+                        <p className='mt-2 text-xs leading-5 text-muted-foreground'>
+                          Use the following accounts to explore different user
+                          experiences:
+                        </p>
+
+                        {/* Accounts */}
+                        <div className='mt-4 grid gap-2 sm:grid-cols-2'>
+                          {/* Admin */}
+                          <div className='rounded-lg border border-border bg-background px-3 py-2.5'>
+                            <p className='text-[10px] font-medium uppercase tracking-wider text-muted-foreground'>
+                              Admin
+                            </p>
+
+                            <p className='mt-1 break-all font-mono text-xs text-foreground'>
+                              {project.demoLogin.admin}
+                            </p>
+                          </div>
+
+                          {/* Customer */}
+                          <div className='rounded-lg border border-border bg-background px-3 py-2.5'>
+                            <p className='text-[10px] font-medium uppercase tracking-wider text-muted-foreground'>
+                              Customer
+                            </p>
+
+                            <p className='mt-1 break-all font-mono text-xs text-foreground'>
+                              {project.demoLogin.customer}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Notice */}
+                        <p className='mt-3 text-[11px] leading-5 text-muted-foreground'>
+                          {project.demoLogin.notice}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
                   {/* Actions */}
                   {(project.link || project.guestLink || project.adminLink) && (
                     <div className='mt-6 flex flex-wrap gap-2 border-t border-border pt-5'>
+                      {/* Live Project */}
                       {project.link && (
                         <Link
                           href={project.link}
@@ -178,6 +232,7 @@ export function ProjectsSection() {
                         </Link>
                       )}
 
+                      {/* Guest Site */}
                       {project.guestLink && (
                         <Link
                           href={project.guestLink}
@@ -190,6 +245,7 @@ export function ProjectsSection() {
                         </Link>
                       )}
 
+                      {/* Admin Site */}
                       {project.adminLink && (
                         <Link
                           href={project.adminLink}

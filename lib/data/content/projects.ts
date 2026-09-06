@@ -6,6 +6,13 @@ export type Project = {
   technologies: string[];
   private: boolean;
   privateNotice?: string;
+
+  demoLogin?: {
+    admin: string;
+    customer: string;
+    notice: string;
+  };
+
   link?: string;
   guestLink?: string;
   adminLink?: string;
@@ -63,5 +70,33 @@ export const projects: Project[] = [
     private: false,
     guestLink: 'https://hotel-booking-lake-three.vercel.app/guest',
     adminLink: 'https://hotel-booking-lake-three.vercel.app/admin',
+  },
+
+  {
+    title: 'LoanFlow',
+    category: 'Full-Stack Web Application',
+    description:
+      'Modern loan origination and decisioning platform designed to streamline loan applications, customer management, credit assessment, document processing, and loan decisioning. Features customer and staff authentication, role-based access control, loan application management, credit scoring, automated decisioning, document management, loan tracking, customer portals, and administrative workflows.',
+    image: '/project5.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Prisma',
+      'PostgreSQL',
+      'Auth.js',
+    ],
+    private: false,
+
+    demoLogin: {
+      admin: 'admin@gmail.com',
+      customer: 'customer@gmail.com',
+      notice:
+        'Demo accounts are provided for testing and demonstration purposes.',
+    },
+
+    link: 'https://loanflow-one.vercel.app/auth/login',
   },
 ];
