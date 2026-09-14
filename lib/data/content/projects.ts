@@ -8,9 +8,9 @@ export type Project = {
   privateNotice?: string;
 
   demoLogin?: {
-    admin: string;
-    customer: string;
-    notice: string;
+    admin?: string;
+    customer?: string;
+    notice?: string;
   };
 
   link?: string;
@@ -41,14 +41,55 @@ export const projects: Project[] = [
   },
 
   {
-    title: 'Paws Grooming',
-    category: 'Web Application',
+    title: 'LoanFlow',
+    category: 'Full-Stack Web Application',
     description:
-      'A modern dog grooming website with appointment booking, grooming services, gallery, and responsive user interface.',
-    image: '/project2.png',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+      'Modern loan origination and decisioning platform designed to streamline loan applications, customer management, credit assessment, document processing, and loan decisioning. Features customer and staff authentication, role-based access control, loan application management, credit scoring, automated decisioning, document management, loan tracking, customer portals, and administrative workflows.',
+    image: '/project5.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Prisma',
+      'PostgreSQL',
+      'Auth.js',
+    ],
     private: false,
-    link: 'https://pawsgrooming.vercel.app/',
+    demoLogin: {
+      admin: 'admin@gmail.com',
+      customer: 'customer@gmail.com',
+      notice:
+        'Demo accounts are provided for testing and demonstration purposes.',
+    },
+    link: 'https://loanflow-one.vercel.app/auth/login',
+  },
+
+  {
+    title: 'Real Estate Property Management Platform',
+    category: 'Full-Stack Web Application',
+    description:
+      'Full-stack real estate property management platform designed to manage property listings, agents, customers, inquiries, appointments, reports, and activity records through a centralized admin workspace. Includes a premium public property experience with detailed listings, property discovery, viewing requests, and an AI-powered real estate concierge, supported by structured dashboards and role-based management workflows.',
+    image: '/project5.png',
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Prisma',
+      'PostgreSQL',
+      'Auth.js',
+    ],
+    private: false,
+    guestLink: 'https://real-estate-property-gilt.vercel.app/',
+    adminLink: 'https://real-estate-property-gilt.vercel.app/login',
+    demoLogin: {
+      admin: 'admin@gmail.com',
+      notice:
+        'Demo accounts are provided for testing and demonstration purposes.',
+    },
   },
 
   {
@@ -73,30 +114,13 @@ export const projects: Project[] = [
   },
 
   {
-    title: 'LoanFlow',
-    category: 'Full-Stack Web Application',
+    title: 'Paws Grooming',
+    category: 'Web Application',
     description:
-      'Modern loan origination and decisioning platform designed to streamline loan applications, customer management, credit assessment, document processing, and loan decisioning. Features customer and staff authentication, role-based access control, loan application management, credit scoring, automated decisioning, document management, loan tracking, customer portals, and administrative workflows.',
-    image: '/project5.png',
-    technologies: [
-      'Next.js',
-      'React',
-      'TypeScript',
-      'Tailwind CSS',
-      'shadcn/ui',
-      'Prisma',
-      'PostgreSQL',
-      'Auth.js',
-    ],
+      'A modern dog grooming website with appointment booking, grooming services, gallery, and responsive user interface.',
+    image: '/project2.png',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     private: false,
-
-    demoLogin: {
-      admin: 'admin@gmail.com',
-      customer: 'customer@gmail.com',
-      notice:
-        'Demo accounts are provided for testing and demonstration purposes.',
-    },
-
-    link: 'https://loanflow-one.vercel.app/auth/login',
+    link: 'https://pawsgrooming.vercel.app/',
   },
 ];
