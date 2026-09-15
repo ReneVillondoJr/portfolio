@@ -3,22 +3,56 @@ import Link from 'next/link';
 
 import { ArrowUpRight, ExternalLink, LockKeyhole } from 'lucide-react';
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 import { Container } from '@/components/ui/container';
 import { projects } from '@/lib/data/content/projects';
 import { Project } from '@/types/homepage';
 
 function ProjectMedia({ project, index }: { project: Project; index: number }) {
+  const imageSources = project.images ?? (project.image ? [project.image] : []);
+
   return (
     <div className='relative aspect-video overflow-hidden bg-muted'>
-      <Image
-        src={project.image}
-        alt={project.title}
-        fill
-        className='object-cover transition-transform duration-700 group-hover:scale-[1.035]'
-        sizes='(max-width: 1024px) 100vw, 50vw'
-      />
+      {imageSources.length > 0 ?
+        imageSources.length > 1 ?
+          <Carousel className='size-full' opts={{ loop: true }}>
+            <CarouselContent className='ml-0 size-full'>
+              {imageSources.map((image, imageIndex) => (
+                <CarouselItem key={image} className='relative pl-0'>
+                  <Image
+                    src={image}
+                    alt={`${project.title} preview ${imageIndex + 1}`}
+                    fill
+                    className='object-cover transition-transform duration-700 group-hover:scale-[1.035]'
+                    sizes='(max-width: 1024px) 100vw, 50vw'
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-      <div className='absolute inset-0 bg-gradient-to-t from-background/75 via-background/10 to-transparent' />
+            <CarouselPrevious className='left-3 z-10' />
+            <CarouselNext className='right-3 z-10' />
+          </Carousel>
+        : <Image
+            src={imageSources[0]}
+            alt={project.title}
+            fill
+            className='object-cover transition-transform duration-700 group-hover:scale-[1.035]'
+            sizes='(max-width: 1024px) 100vw, 50vw'
+          />
+
+      : <div className='flex size-full items-center justify-center text-sm text-muted-foreground'>
+          Project preview unavailable
+        </div>
+      }
+
+      <div className='absolute inset-0 bg-linear-to-t from-background/75 via-background/10 to-transparent' />
 
       {/* Number */}
       <div className='absolute left-5 top-5 flex size-8 items-center justify-center rounded-full border border-border bg-background/70 font-mono text-[10px] text-muted-foreground backdrop-blur-md'>
@@ -87,7 +121,7 @@ export function ProjectsSection() {
             return (
               <article
                 key={project.title}
-                className='group overflow-hidden rounded-2xl border border-border bg-foreground/2 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/10 hover:bg-foreground/[0.025]'
+                className='group overflow-hidden rounded-2xl border border-border bg-foreground/2 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/10 hover:bg-foreground/2.5'
               >
                 {/* Project Image */}
                 {isExternalProject ?
@@ -168,7 +202,7 @@ export function ProjectsSection() {
                   {/* Demo Login */}
                   {project.demoLogin && (
                     <div className='mt-6 border-t border-border pt-5'>
-                      <div className='rounded-xl border border-border bg-foreground/[0.02] p-4'>
+                      <div className='rounded-xl border border-border bg-foreground/2 p-4'>
                         {/* Header */}
                         <div className='flex items-center gap-2'>
                           <span className='text-sm'>🔐</span>

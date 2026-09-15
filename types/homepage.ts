@@ -10,15 +10,16 @@ export type Project = {
   title: string;
   category: string;
   description: string;
-  image: string;
+  image?: string;
+  images?: string[];
   technologies: string[];
   private: boolean;
   privateNotice?: string;
 
   demoLogin?: {
-    admin?: string;
+    admin: string;
     customer?: string;
-    notice?: string;
+    notice: string;
   };
 
   link?: string;
