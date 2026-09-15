@@ -1,13 +1,6 @@
-import { Mail, Phone, type LucideIcon } from 'lucide-react';
-
+import { Mail, Phone } from 'lucide-react';
+import { ContactItem } from '@/types/homepage';
 import { portfolioData } from './profile';
-
-export interface ContactItem {
-  label: string;
-  value: string;
-  href: string;
-  icon: LucideIcon;
-}
 
 export const contactItems: ContactItem[] = [
   {

@@ -1,19 +1,5 @@
-import {
-  Braces,
-  Database,
-  Layout,
-  Smartphone,
-  Wrench,
-  type LucideIcon,
-} from 'lucide-react';
-
-export interface SkillGroup {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  skills: string[];
-}
-
+import { Braces, Database, Layout, Smartphone, Wrench } from 'lucide-react';
+import { SkillGroup } from '@/types/homepage';
 export const skillGroups: SkillGroup[] = [
   {
     title: 'Frontend',

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { ArrowUpRight, ExternalLink, LockKeyhole } from 'lucide-react';
 
 import { Container } from '@/components/ui/container';
-import { projects, type Project } from '@/lib/data/content/projects';
+import { projects } from '@/lib/data/content/projects';
+import { Project } from '@/types/homepage';
 
 function ProjectMedia({ project, index }: { project: Project; index: number }) {
   return (

@@ -1,22 +1,4 @@
-export type Project = {
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  private: boolean;
-  privateNotice?: string;
-
-  demoLogin?: {
-    admin?: string;
-    customer?: string;
-    notice?: string;
-  };
-
-  link?: string;
-  guestLink?: string;
-  adminLink?: string;
-};
+import { Project } from '@/types/homepage';
 
 export const projects: Project[] = [
   {
