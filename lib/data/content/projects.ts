@@ -2,7 +2,7 @@ import { Project } from '@/types/homepage';
 
 export const projects: Project[] = [
   {
-    title: 'Client Management System',
+    title: 'Financial Assistance Proposed System Access Control',
     category: 'Private Client Project',
     description:
       'Modern business management platform built with React, Next.js, TypeScript, and Tailwind CSS, featuring role-based access control, automated data reconciliation, Excel/Instafin integration, bulk data updates, and client and beneficiary status tracking. Designed with separate access levels for Super Admin, Finance, Staff, and Branch Manager to provide secure and efficient operations.',
