@@ -68,7 +68,7 @@ function ProjectMedia({ project, index }: { project: Project; index: number }) {
       )}
 
       {/* View Project */}
-      {project.link && (
+      {project.link && project.imageLinkEnabled !== false && (
         <div className='absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs text-foreground opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100'>
           <ExternalLink className='size-3.5' />
           View Project
@@ -117,6 +117,8 @@ export function ProjectsSection() {
         <div className='mt-14 grid gap-8 lg:grid-cols-2'>
           {projects.map((project, index) => {
             const isExternalProject = Boolean(project.link);
+            const isImageLink =
+              isExternalProject && project.imageLinkEnabled !== false;
 
             return (
               <article
@@ -124,7 +126,7 @@ export function ProjectsSection() {
                 className='group overflow-hidden rounded-2xl border border-border bg-foreground/2 transition-all duration-500 hover:-translate-y-1.5 hover:border-foreground/10 hover:bg-foreground/2.5'
               >
                 {/* Project Image */}
-                {isExternalProject ?
+                {isImageLink ?
                   <Link
                     href={project.link!}
                     target='_blank'

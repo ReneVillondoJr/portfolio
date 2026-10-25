@@ -12,6 +12,7 @@ export type Project = {
   description: string;
   image?: string;
   images?: string[];
+  imageLinkEnabled?: boolean;
   technologies: string[];
   private: boolean;
   privateNotice?: string;

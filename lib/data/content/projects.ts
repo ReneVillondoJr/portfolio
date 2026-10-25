@@ -23,6 +23,37 @@ export const projects: Project[] = [
   },
 
   {
+    title: 'AeroPass Airline Reservation System',
+    category: 'Full-Stack Web Application',
+    description:
+      'Built an airline reservation platform with separate customer and administrative experiences. Implemented an admin dashboard, customer portal, user and role management, flight reservation workflows, notification management, and administrative activity logs. Designed a responsive interface using reusable components and a centralized mock data source to demonstrate airline operations and customer-facing functionality.',
+    images: [
+      '/aeropass/aeropass1.png',
+      '/aeropass/aeropass2.png',
+      '/aeropass/aeropass3.png',
+    ],
+    imageLinkEnabled: false,
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'Lucide React',
+    ],
+    private: false,
+    link: 'https://aeropass-eight.vercel.app/',
+    guestLink: 'https://aeropass-eight.vercel.app/',
+    adminLink: 'https://aeropass-eight.vercel.app/admin/dashboard',
+    demoLogin: {
+      admin: 'juan@aeropass.local',
+      customer: 'juan@aeropass.local',
+      notice:
+        'Demo credentials: juan@aeropass.local / Password123! Use the available demo account to explore the application.',
+    },
+  },
+
+  {
     title: 'LoanFlow',
     category: 'Full-Stack Web Application',
     description:
